@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manpower訪客登記</title>
+</head>
+<body>
+    <h2>訪客登記表單</h2>
+    <form method="POST">
+        姓名：<input type="text" name="name" required><br>
+        受訪者：<input type="text" name="host" required><br>
+        <input type="submit" value="登記與拍照">
+    </form>
+    <h3>近期訪客</h3>
+    <ul>
+    {% for rec in records %}
+        <li>{{ rec[1] }} ➤ {{ rec[2] }} ｜{{ rec[3] }} ｜ <img src="/{{ rec[4] }}" width="100"></li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
